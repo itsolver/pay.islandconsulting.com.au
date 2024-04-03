@@ -3,16 +3,14 @@
 # Resources:
 # https://developers.cloudflare.com/workers/quickstart/
 # https://developers.cloudflare.com/workers/tooling/wrangler/configuration/
-
 name = "pay"
-type = "node"
+main = "worker/index.ts"
 account_id = "c0ccbb539a9e98c34890b32ab62c8312"
-zone_id = "52ab4cf019d6e203891bb35c59774b6a"
 workers_dev = true
+compatibility_date = "2024-04-03"
 
 [site]
-bucket = "dist"
-entry-point = "pay"
+bucket = "public"
 
 [env.production]
 name = "pay"
