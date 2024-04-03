@@ -1,0 +1,19 @@
+# Wrangler Configuration
+
+# Resources:
+# https://developers.cloudflare.com/workers/quickstart/
+# https://developers.cloudflare.com/workers/tooling/wrangler/configuration/
+
+name = "pay"
+type = "node"
+account_id = "c0ccbb539a9e98c34890b32ab62c8312"
+zone_id = "52ab4cf019d6e203891bb35c59774b6a"
+workers_dev = true
+
+[site]
+bucket = "dist"
+entry-point = "pay"
+
+[env.production]
+name = "pay"
+route = "pay.islandconsulting.com.au/*"

@@ -35,10 +35,10 @@ export const create: Handler = async function (request) {
 				//   price: PRICE_ID
 				// Or, inline price data:
 				price_data: {
-					currency: 'usd',
-					unit_amount: 2000,
+					currency: 'aud',
+					unit_amount: 80000,
 					product_data: {
-						name: 'T-shirt',
+						name: 'Island Consulting',
 					}
 				},
 			}],
