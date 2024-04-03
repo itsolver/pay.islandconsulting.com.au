@@ -7,7 +7,7 @@ declare const STRIPE_API_KEY: string;
 const stripe = new Stripe(STRIPE_API_KEY, {
 	// Cloudflare Workers use the Fetch API for their API requests.
 	httpClient: Stripe.createFetchHttpClient(),
-	apiVersion: '2020-08-27',
+	apiVersion: '2023-10-16',
 });
 
 function reply(message: string, status: number): Response {
