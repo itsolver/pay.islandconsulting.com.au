@@ -1,16 +1,16 @@
 {
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "build": "worktop build worker/index.ts"
   },
   "dependencies": {
-    "stripe": "14.23.0",
-    "wrangler": "^3.44.0"
+    "stripe": "16.2.0",
+    "wrangler": "^3.63.1"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20240402.0",
+    "@cloudflare/workers-types": "4.20240620.0",
     "@esbuild-plugins/node-modules-polyfill": "0.2.2",
     "worktop.build": "0.0.5"
   }

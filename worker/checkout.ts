@@ -76,13 +76,12 @@ export const lookup: Handler = async function (request) {
 	}
 }
 
-addEventListener('fetch', event => {
-	event.respondWith(handleRequest(event.request).catch(
-		err => new Response(`Server Error: ${err.message}`, { status: 500 })
-	));
-});
-
-async function handleRequest(request: Request) {
+async function handleRequest(request: Request): Promise<Response> {
 	// Your existing routing logic here
+	// Ensure all code paths return a Response object
+	return new Response('Not Found', { status: 404 }); // Default response if no route matches
 }
 
+addEventListener('fetch', event => {
+	event.respondWith(handleRequest(event.request));
+});
