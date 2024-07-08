@@ -1,16 +1,18 @@
-// index.ts
 import * as checkout from './checkout';
 import type { ModuleWorker } from './types';
 
 const worker: ModuleWorker = {
-    async fetch(req, env, ctx) {
-        const url = new URL(req.url);
+	fetch(req, env, ctx) {
+		// POST /api/checkout
+		if (req.method === 'POST') {
+			return checkout.create(req, env, ctx);
+		}
 
-        // Handle the intent to create a checkout session
-        if (url.pathname.endsWith("/intent")) {
-            return checkout.create(req, env, ctx);
-        }
-    }
+		// GET|HEAD /api/checkout
+		if (req.method === 'GET' || req.method === 'HEAD') {
+			return checkout.lookup(req, env, ctx);
+		}
+	}
 }
 
 export default worker;
